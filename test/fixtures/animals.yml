@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  species: MyString
+  breed: MyString
+  price: 1
+  status: MyString
+
+two:
+  species: MyString
+  breed: MyString
+  price: 1
+  status: MyString

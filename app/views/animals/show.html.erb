@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Species:</b>
+  <%= @animal.species %>
+</p>
+
+<p>
+  <b>Breed:</b>
+  <%= @animal.breed %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @animal.price %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @animal.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_animal_path(@animal) %> |
+<%= link_to 'Back', animals_path %>

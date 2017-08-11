@@ -1,0 +1,31 @@
+<center>
+<h1>My Pet Shop</h1>
+
+<table>
+  <tr>
+    <th>Species</th>
+    <th>Breed</th>
+    <th>Price</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @animals.each do |animal| %>
+  <tr>
+    <td><%= animal.species %></td>
+    <td><%= animal.breed %></td>
+    <td><%= animal.price %></td>
+    <td><%= animal.status %></td>
+    <td><%= link_to 'Show', animal %></td>
+    <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
+    <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Animal', new_animal_path %>
+</center>
