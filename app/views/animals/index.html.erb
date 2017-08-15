@@ -20,6 +20,8 @@
     <td><%= animal.status %></td>
     <td><%= link_to 'Show', animal %></td>
     <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
+    <td><%= link_to 'Sold', animal_change_status_sold_path(animal)%></</td>
+    <td><%= link_to 'For Sale', animal_change_status_for_sale_path(animal)%></</td>
     <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   
   </tr>

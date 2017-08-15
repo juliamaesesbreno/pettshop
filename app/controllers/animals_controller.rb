@@ -1,4 +1,6 @@
 class AnimalsController < ApplicationController
+before_filter :set_animal, only: [:show, :edit, :update, :destroy, :change_status_sold, :change_status_for_sale, :count]
+ 
   # GET /animals
   # GET /animals.json
   def index
@@ -69,6 +71,20 @@ class AnimalsController < ApplicationController
     end
   end
 
+  #def count
+  #end
+
+  def change_status_sold
+    @animal.status= "Sold"
+    @animal.save
+    redirect_to animals_path
+end
+
+  def change_status_for_sale
+    @animal.status= "For Sale"
+    @animal.save
+    redirect_to animals_path
+end
   # DELETE /animals/1
   # DELETE /animals/1.json
   def destroy
@@ -80,4 +96,12 @@ class AnimalsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+private
+     # Use callbacks to share common setup or constraints between actions.
+     def set_animal
+     id = params[:animal_id] || params[:id]
+      @animal = Animal.find(id)
+     end
 end

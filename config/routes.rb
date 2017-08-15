@@ -1,5 +1,21 @@
 Pettshop::Application.routes.draw do
+  get "sessions/new"
+  
+  get    '/help',    to: 'static_pages#help'
+  get    '/about',   to: 'static_pages#about'
+  get    '/contact', to: 'static_pages#contact'
+  get    '/signup',  to: 'users#new'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  resources :users
+
   resources :animals
+
+  resources :animals do
+    get 'change_status_sold' => 'animals#change_status_sold'
+    get 'change_status_for_sale' => 'animals#change_status_for_sale'
+end
 
 
   # The priority is based upon order of creation:

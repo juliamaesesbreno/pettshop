@@ -10,4 +10,9 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
 end
+rails test test/integration/users_login_test.rb
+ails generate integration_test users_login
