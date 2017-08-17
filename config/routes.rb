@@ -15,6 +15,8 @@ Pettshop::Application.routes.draw do
   resources :animals do
     get 'change_status_sold' => 'animals#change_status_sold'
     get 'change_status_for_sale' => 'animals#change_status_for_sale'
+    #try
+    get 'summary' => 'animals#summary'
 end
 
 

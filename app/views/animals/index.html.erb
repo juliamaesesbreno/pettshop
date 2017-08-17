@@ -26,6 +26,7 @@
        <td><%= link_to 'Show', animal_path(animal)%></td>
        <td><%= link_to 'Edit', edit_animal_path(animal) %> - </td>
        <td><%= link_to 'Delete', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <td><%= link_to 'Summary', animal_summary_path(animal) %></td>
   </tr>
 <% end %>
 </table>

@@ -1,9 +1,17 @@
 class AnimalsController < ApplicationController
-before_filter :set_animal, only: [:show, :edit, :update, :destroy, :change_status_sold, :change_status_for_sale, :count]
+before_filter :set_animal, only: [:show, :edit, :update, :destroy, :change_status_sold, :change_status_for_sale, :summary]
 
   # GET /animals
   # GET /animals.json
   def index
+    #try
+    @animal = Animal.where(nil) # creates an anonymous scope
+    @animal = @animal.species(params[:species]) if params[:species].present?
+    @animal = @animal.breed(params[:breed]) if params[:breed].present?
+    @animal = @animal.breed(params[:price]) if params[:price].present?
+    @animal = @animal.breed(params[:status]) if params[:status].present?
+    #
+
     @animals = Animal.all
 
     respond_to do |format|
@@ -71,9 +79,6 @@ before_filter :set_animal, only: [:show, :edit, :update, :destroy, :change_statu
     end
   end
 
-  #def count
-  #end
-
   def change_status_sold
     @animal.status= "Sold"
     @animal.save
@@ -85,6 +90,13 @@ end
     @animal.save
     redirect_to animals_path
 end
+
+
+ def summary
+    #@animal = Animal.find(params[:id])
+    #@animal.summary
+  end
+
   # DELETE /animals/1
   # DELETE /animals/1.json
   def destroy
