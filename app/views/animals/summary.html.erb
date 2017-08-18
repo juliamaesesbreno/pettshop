@@ -22,7 +22,7 @@
 <br>
 <p>
 <strong>Total Amount Received From Sales:</strong>
-    <%= @animal = Animal.count %>
+   <%= @animal = Animal.sum(&:price) %>
 </p>
 
 <%= link_to 'Back', animals_path %>

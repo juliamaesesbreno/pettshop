@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-before_filter :set_animal, only: [:show, :edit, :update, :destroy, :change_status_sold, :change_status_for_sale, :summary]
+before_filter :set_animal, only: [:show, :edit, :update, :destroy, :change_status_sold, :change_status_for_sale, :summary, :price]
 
   # GET /animals
   # GET /animals.json
